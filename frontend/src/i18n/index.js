@@ -8,6 +8,7 @@ i18n.use(initReactI18next).init({
   resources: {
     fr: { translation: fr },
     en: { translation: en },
+    no: { translation: no },
   },
   lng: "fr", // langue par défaut
   fallbackLng: "en",
