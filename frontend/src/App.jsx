@@ -243,9 +243,9 @@ export default function App() {
       {/* Modals */}
       <Modal
         open={!!pendingAction}
-        title="Modifications non sauvegardées"
-        okText="Abandonner"
-        cancelText="Annuler"
+        title={t("dirty.title")}
+        okText={t("dirty.abandon")}
+        cancelText={t("dirty.cancel")}
         okButtonProps={{ danger: true }}
         onOk={() => {
           pendingAction?.();
