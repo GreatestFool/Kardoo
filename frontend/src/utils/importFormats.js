@@ -197,7 +197,7 @@ export function fromXCard(xmlStr) {
 
 // ─── CSV ─────────────────────────────────────────────────────────────────────
 export function fromCSV(csvStr) {
-  const lines = csvStr.split("\n").filter(Boolean);
+  const lines = csvStr.replace(/^\ufeff/, "").split("\n").filter(Boolean);
   if (lines.length < 2) return [];
 
   const parseRow = (line) => {

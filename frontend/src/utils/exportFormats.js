@@ -538,13 +538,13 @@ export function toCSV(contacts, exportFields = []) {
     columns.map((col) => csvEsc(col.val(c))).join(","),
   );
 
-  return [headers.join(","), ...rows].join("\n");
+  return "\ufeff" + [headers.join(","), ...rows].join("\n");
 }
 
 // ─── Utilitaires ─────────────────────────────────────────────────────────────
 
 export function sanitizeFilename(name) {
   return (
-    (name || "contact").replace(/[^a-zA-Z0-9_\-. ]/g, "_").trim() || "contact"
+    (name || "contact").replace(/[^\p{L}\p{N}_\-,. \[\]\(\)]/gu, "_").trim() || "contact"
   );
 }
