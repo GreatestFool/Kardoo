@@ -172,6 +172,7 @@ export default function SettingsDialog({ open, onClose }) {
           options={[
             { value: "fr", label: "🇫🇷 Français" },
             { value: "en", label: "🇬🇧 English" },
+            { value: "no", label: "🇳🇴 Norwegian Bokmål" },
           ]}
           style={{ width: 160 }}
         />
